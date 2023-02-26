@@ -1,10 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const importAll = (r) => r.keys().map(r);
+const residentialImages = importAll(
+  require.context("./images-residential", false, /\.(png|jpe?g|svg)$/)
+);
+const commercialImages = importAll(
+  require.context("./images-commercial", false, /\.(png|jpe?g|svg)$/)
+);
+const processImages = importAll(
+  require.context("./images-process", false, /\.(png|jpe?g|svg)$/)
+);
+
+export { residentialImages, commercialImages, processImages };
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
