@@ -1,38 +1,97 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
+  justify-content: center;
+  align-content: center;
   flex-direction: column;
+  background-color: rgb(172, 219, 179);
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 2%;
+}
+
+.header-button {
+  padding: 20px;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 25px;
+}
+
+.gallery-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.category-button {
+  height: 40px;
+  width: 100px;
+  background-color: rgb(143, 156, 112);
+  margin: 30px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 30px;
+  margin: auto 45px;
+  background-color: rgb(95, 161, 204);
+  padding: 50px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  overflow: hidden;
+  border-radius: 25px;
+  box-shadow: 1px 1px 5px 1px #031202;
+  opacity: 0.8;
+  transition: transform 1s ease;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.5);
+}
+
+/* .selected {
+  transform: scale(1.1);
+} */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 24, 10, 1);
+  z-index: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image-popup img {
+  max-width: 50%;
+  max-height: 50%;
+  object-fit: contain;
+  border-radius: 25px;
 }
