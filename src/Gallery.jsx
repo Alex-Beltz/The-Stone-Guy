@@ -4,6 +4,12 @@ import { residentialImages, commercialImages, processImages } from "./index.js";
 
 function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("residential");
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+    setSelectedImage(null);
+  };
 
   const handleImageClick = (index) => {
     setSelectedImage(index);
@@ -19,10 +25,23 @@ function Gallery() {
     setSelectedImage(null);
   };
 
+  const getImagesForCategory = () => {
+    switch (selectedCategory) {
+      case "residential":
+        return residentialImages;
+      case "commercial":
+        return commercialImages;
+      case "process":
+        return processImages;
+      default:
+        return residentialImages;
+    }
+  };
+
   const selectedImages =
     selectedImage !== null
-      ? [residentialImages[selectedImage]]
-      : residentialImages;
+      ? [getImagesForCategory()[selectedImage]]
+      : getImagesForCategory();
 
   const imageElements = selectedImages.map((image, index) => {
     return (
@@ -40,33 +59,38 @@ function Gallery() {
 
   return (
     <>
-      {/* <div className="gallery-button-container">
+      <div className="gallery-button-container">
         <button
-          className="category-button"
-          onClick={() => handleButtonClick("residential")}
+          className={`category-button btn${
+            selectedCategory === "residential" ? " selected" : ""
+          }`}
+          onClick={() => handleCategoryClick("residential")}
         >
-          {" "}
           Residential
-        </button>{" "}
+        </button>
         <button
-          className="category-button"
-          onClick={() => handleButtonClick("commercial")}
+          className={`category-button btn${
+            selectedCategory === "commercial" ? " selected" : ""
+          }`}
+          onClick={() => handleCategoryClick("commercial")}
         >
           Commercial
         </button>
         <button
-          className="category-button"
-          onClick={() => handleButtonClick("process")}
+          className={`category-button btn${
+            selectedCategory === "process" ? " selected" : ""
+          }`}
+          onClick={() => handleCategoryClick("process")}
         >
           Process
         </button>
-      </div> */}
+      </div>
       <div className="gallery">{imageElements}</div>
       {selectedImage !== null && (
         <div className="overlay" onClick={handleCloseClick}>
           <div className="image-popup">
             <img
-              src={residentialImages[selectedImage]}
+              src={getImagesForCategory()[selectedImage]}
               alt={`Image ${selectedImage}`}
             />
           </div>
