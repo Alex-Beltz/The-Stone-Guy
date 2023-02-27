@@ -1,39 +1,75 @@
-.App {
+body {
+  font-family: "Tilt Neon", cursive;
+}
+
+.App,
+.content {
   text-align: center;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
   background-color: rgb(172, 219, 179);
+  height: 100%;
 }
 
-.header {
-  height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 2%;
+.content {
+  padding: 30px;
 }
 
-.header-button {
-  padding: 20px;
-  height: 40%;
+.btn {
+  padding: 15px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   border-radius: 25px;
+  font-weight: bold;
+  text-align: center;
+  max-width: fit-content;
+  font-size: 1.25rem;
 }
+
+.btn:hover {
+  opacity: 0.9;
+  background-color: rgb(245, 245, 137);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 20px auto;
+  background-color: rgb(172 204 219);
+  z-index: 100;
+  border-bottom: 3px ridge black;
+}
+
+.header-button {
+  height: 50%;
+  width: fit-content;
+  margin: 20px;
+}
+
+/*////////////////////////////////
+//////////////////////////////////Gallery Styles
+/////////////////////////////////*/
 
 .gallery-button-container {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 
 .category-button {
-  height: 40px;
-  width: 100px;
-  background-color: rgb(143, 156, 112);
+  background-color: rgb(172 204 219);
   margin: 30px;
 }
 
@@ -44,6 +80,7 @@
   margin: auto 45px;
   background-color: rgb(95, 161, 204);
   padding: 50px;
+  border-radius: 25px;
 }
 
 .image-container {
@@ -83,15 +120,60 @@
   width: 100%;
   height: 100%;
   background-color: rgba(3, 24, 10, 1);
-  z-index: 1;
+  z-index: 101;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .image-popup img {
-  max-width: 50%;
-  max-height: 50%;
+  max-width: 75%;
   object-fit: contain;
   border-radius: 25px;
+}
+
+/*////////////////////////////////
+//////////////////////////////////Contact Styles
+/////////////////////////////////*/
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.form-container h2 {
+  font-size: 3rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-self: center;
+}
+
+.contact-input {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.contact-input label {
+  font-size: 1.5rem;
+}
+
+.contact-input input {
+  width: 60%;
+  padding: 6px;
+}
+
+.contact-input #message {
+  height: 300px;
+  width: 500px;
+}
+
+.contact-submit-btn {
 }

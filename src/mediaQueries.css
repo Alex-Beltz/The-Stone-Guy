@@ -1,0 +1,36 @@
+@media only screen and (max-width: 700px) {
+  .content {
+    padding: auto;
+  }
+
+  .header {
+  }
+
+  .gallery-button-container {
+    /* margin-bottom: 25px; */
+  }
+
+  .category-button {
+    margin: 10px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(85%, 1fr));
+    margin: auto 25px;
+    padding: 30px;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .contact-input input {
+    width: 60%;
+    padding: 6px;
+  }
+
+  .contact-input #message {
+    height: 200px;
+    width: 80%;
+  }
+}
