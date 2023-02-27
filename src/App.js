@@ -1,56 +1,6 @@
-// import logo from "./logo.svg";
-// import React, { useState } from "react";
-// import "./App.css";
-// import Gallery from "./gallery";
-// import { residentialImages, commercialImages, processImages } from "./index.js";
-
-// function App() {
-//   const [selectedCategory, setSelectedCategory] = useState("residential");
-
-//   let selectedImages;
-//   if (selectedCategory === "residential") {
-//     selectedImages = residentialImages;
-//   } else if (selectedCategory === "commercial") {
-//     selectedImages = commercialImages;
-//   } else if (selectedCategory === "process") {
-//     selectedImages = processImages;
-//   }
-
-//   const handleButtonClick = (category) => {
-//     setSelectedCategory(category);
-//   };
-
-//   return (
-//     <div className="App">
-//       <div className="gallery-button-container">
-//         <button
-//           className="category-button"
-//           onClick={() => handleButtonClick("residential")}
-//         >
-//           Residential
-//         </button>
-//         <button
-//           className="category-button"
-//           onClick={() => handleButtonClick("commercial")}
-//         >
-//           Commercial
-//         </button>
-//         <button
-//           className="category-button"
-//           onClick={() => handleButtonClick("process")}
-//         >
-//           Process
-//         </button>
-//       </div>
-//       <Gallery images={selectedImages} />
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import React, { useState } from "react";
 import "./App.css";
+import "./mediaQueries.css";
 import Home from "./Home";
 import Contact from "./Contact";
 import AboutUs from "./AboutUs";
@@ -60,7 +10,7 @@ import Reviews from "./Reviews";
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
 
-  const handleButtonClick = (page) => {
+  const handleComponentButtonClick = (page) => {
     setSelectedPage(page);
   };
 
@@ -81,32 +31,32 @@ function App() {
     <div className="App">
       <header className="header">
         <button
-          className="header-button"
-          onClick={() => handleButtonClick("home")}
+          className="header-button btn"
+          onClick={() => handleComponentButtonClick("home")}
         >
           Home
         </button>
         <button
-          className="header-button"
-          onClick={() => handleButtonClick("contact")}
+          className="header-button btn"
+          onClick={() => handleComponentButtonClick("contact")}
         >
           Contact
         </button>
         <button
-          className="header-button"
-          onClick={() => handleButtonClick("aboutus")}
+          className="header-button btn"
+          onClick={() => handleComponentButtonClick("aboutus")}
         >
           About Us
         </button>
         <button
-          className="header-button"
-          onClick={() => handleButtonClick("gallery")}
+          className="header-button btn"
+          onClick={() => handleComponentButtonClick("gallery")}
         >
           Gallery
         </button>
         <button
-          className="header-button"
-          onClick={() => handleButtonClick("reviews")}
+          className="header-button btn"
+          onClick={() => handleComponentButtonClick("reviews")}
         >
           Reviews
         </button>
