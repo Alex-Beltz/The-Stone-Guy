@@ -17,8 +17,12 @@ function Gallery() {
 
   const handleImageHover = (index, hover) => {
     const elements = document.getElementsByClassName("image-container");
-    elements[index].style.transform = hover ? "scale(1.1)" : "none";
+    elements[index].style.transform = hover ? "scale(1.2)" : "none";
+    elements[index].style.zIndex = hover ? "101" : "1";
     elements[index].style.opacity = hover ? "1" : "0.8";
+    elements[index].style.boxShadow = hover
+      ? "0px 0px 7px 3px #031202"
+      : "1px 1px 5px 1px #031202";
   };
 
   const handleCloseClick = () => {
