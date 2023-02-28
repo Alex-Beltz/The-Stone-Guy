@@ -29,6 +29,14 @@ function App() {
 
   return (
     <div className="App">
+      <div
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(181,181,181,1) 41%, rgba(132,149,136,1) 80%)",
+        }}
+      >
+        <h1 style={{ fontSize: "4rem" }}>The Stone Guy</h1>
+      </div>
       <header className="header">
         <button
           className="header-button btn"
