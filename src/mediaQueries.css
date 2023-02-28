@@ -24,13 +24,22 @@
     padding: 20px;
   }
 
+  .contact-input {
+    flex-direction: column;
+  }
+
+  .contact-input label {
+    justify-content: flex-start;
+    margin-bottom: -10%;
+  }
+
   .contact-input input {
-    width: 60%;
+    width: 100%;
     padding: 6px;
   }
 
   .contact-input #message {
     height: 200px;
-    width: 80%;
+    width: 100%;
   }
 }
