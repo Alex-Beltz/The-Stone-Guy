@@ -5,6 +5,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const importAll = (r) => r.keys().map(r);
+const extraImages = importAll(
+  require.context("./images-extra", false, /\.(png|jpe?g|svg)$/)
+);
 const residentialImages = importAll(
   require.context("./images-residential", false, /\.(png|jpe?g|svg)$/)
 );
@@ -15,7 +18,7 @@ const processImages = importAll(
   require.context("./images-process", false, /\.(png|jpe?g|svg)$/)
 );
 
-export { residentialImages, commercialImages, processImages };
+export { extraImages, residentialImages, commercialImages, processImages };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
